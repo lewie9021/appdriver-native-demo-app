@@ -41,7 +41,10 @@ class ListScreen extends React.Component {
     const list = createList(30);
 
     return (
-      <SafeAreaView {...setTestId("list-screen")} style={styles.container}>
+      <SafeAreaView
+        {...setTestId("list-screen")}
+        style={styles.container}
+      >
         <FlatList
           data={list}
           renderItem={({item}) => (
