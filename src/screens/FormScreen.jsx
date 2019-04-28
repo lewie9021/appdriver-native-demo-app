@@ -1,6 +1,8 @@
 import React from "react";
-import { SafeAreaView, ScrollView, TextInput } from "react-native";
+import { SafeAreaView, ScrollView } from "react-native";
 import setTestId from "../helpers/setTestId";
+import TextInput from "../components/TextInput";
+import Button from "../components/Button";
 
 class FormScreen extends React.Component {
   static navigationOptions = () => ({
@@ -24,7 +26,12 @@ class FormScreen extends React.Component {
         >
           <TextInput
             {...setTestId("text-input")}
-            style={{padding: 8, borderColor: 'gray', borderWidth: 1}}
+            style={{marginBottom: 20}}
+          />
+          <Button
+            {...setTestId("button")}
+            text="Button"
+            onPress={() => alert("Hello World!")}
           />
         </ScrollView>
       </SafeAreaView>
