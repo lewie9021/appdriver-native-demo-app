@@ -28,6 +28,11 @@ const Page = ({backgroundColor, color, ...props}) => (
 class CarouselScreen extends React.Component {
   static navigationOptions = () => ({
     title: "Carousel Screen",
+    headerTitleStyle: {
+      flex: 1,
+      textAlign: "center",
+      alignSelf:'center'
+    }
   });
 
   render() {
