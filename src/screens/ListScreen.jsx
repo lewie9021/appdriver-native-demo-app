@@ -53,7 +53,7 @@ class FlatListScreen extends React.Component {
               <ListItem
                 {...setTestId(item.testId)}
                 text={item.text}
-                onPress={() => {}}
+                onPress={() => alert(item.text)}
               />
             </Fragment>
           ))}
