@@ -7,9 +7,9 @@ import ListScreen from "./screens/ListScreen";
 import ScreenA from "./screens/ScreenA";
 
 const AppNavigator = createStackNavigator({
-  List: ListScreen,
   Form: FormScreen,
   Carousel: CarouselScreen,
+  List: ListScreen,
   FlatList: FlatListScreen,
   ScreenA: ScreenA
 });

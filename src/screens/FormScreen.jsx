@@ -40,8 +40,8 @@ class FormScreen extends React.Component {
           <Button
             {...setTestId("button")}
             text="Button"
-            onPress={() => alert("Hello World!")}
-            onLongPress={() => alert("Helloooooo World!")}
+            onPress={() => alert("Tap")}
+            onLongPress={() => alert("Long Press")}
           />
         </ScrollView>
       </SafeAreaView>
