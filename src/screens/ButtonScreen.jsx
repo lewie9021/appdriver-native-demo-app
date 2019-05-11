@@ -27,6 +27,7 @@ class ButtonScreen extends React.Component {
         style={styles.container}
       >
         <Button
+          {...setTestId("button")}
           text="Press Me!"
           onPress={() => alert("Hello World!")}
         />
