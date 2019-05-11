@@ -1,13 +1,17 @@
 import React from "react";
 import { View, Text } from "react-native";
-import Pressable from "../components/Pressable";
 import setTestId from "../helpers/setTestId";
+import Button from "../components/Button";
 
 const styles = {
   container: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "center"
+    padding: 16
+  },
+  text: {
+    textAlign: "center",
+    marginTop: 16
   }
 };
 
@@ -22,15 +26,14 @@ class ButtonScreen extends React.Component {
         {...setTestId("button-screen")}
         style={styles.container}
       >
-        <Pressable
-          {...setTestId("button")}
+        <Button
+          text="Press Me!"
           onPress={() => alert("Hello World!")}
+        />
+        <Text
+          {...setTestId("text")}
+          style={styles.text}
         >
-          <Text {...setTestId("button-text")}>
-            Press Me!
-          </Text>
-        </Pressable>
-        <Text {...setTestId("text")}>
           Hello World
         </Text>
       </View>
