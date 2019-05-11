@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
-    "sim:iphone": "yarn react-native run-ios --simulator 'iPhone X'",
+    "sim:ios": "yarn react-native run-ios --simulator 'iPhone X'",
     "sim:android": "yarn run:pixel2 && yarn react-native run-android",
     "run:pixel2": "nohup emulator -avd Pixel_2_API_27 >/dev/null &"
   },
