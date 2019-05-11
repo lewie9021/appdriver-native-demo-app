@@ -1,19 +1,42 @@
 import React from "react";
+import { StatusBar } from "react-native";
 import { createStackNavigator, createAppContainer } from "react-navigation";
+import MenuScreen from "./screens/MenuScreen";
 import FormScreen from "./screens/FormScreen";
-import ButtonScreen from "./screens/ButtonScreen";
 import CarouselScreen from "./screens/CarouselScreen";
 import FlatListScreen from "./screens/FlatListScreen";
 import ListScreen from "./screens/ListScreen";
-import ScreenA from "./screens/ScreenA";
+import ButtonScreen from "./screens/ButtonScreen";
 
-const AppNavigator = createStackNavigator({
+StatusBar.setBackgroundColor("#00CC00");
+StatusBar.setBarStyle("light-content");
+
+const routes = {
+  Menu: MenuScreen,
   Form: FormScreen,
-  Button: ButtonScreen,
   Carousel: CarouselScreen,
   FlatList: FlatListScreen,
   List: ListScreen,
-  ScreenA: ScreenA
+  Button: ButtonScreen
+};
+
+const AppNavigator = createStackNavigator(routes, {
+  headerLayoutPreset: "center",
+  defaultNavigationOptions: {
+    headerStyle: {
+      backgroundColor: "#00CC00",
+      borderBottomWidth: 1,
+      borderBottomColor: "#00B300",
+      color: "white"
+    },
+    headerTitleStyle: {
+      color: "white"
+    },
+    headerTintColor: "white",
+    headerBackTitleStyle: {
+      color: "white"
+    }
+  }
 });
 
 export default createAppContainer(AppNavigator);

@@ -12,14 +12,9 @@ const styles = {
 };
 
 class ButtonScreen extends React.Component {
-  static navigationOptions = () => ({
-    title: "Button Screen",
-    headerTitleStyle: {
-      flex: 1,
-      textAlign: "center",
-      alignSelf:'center'
-    }
-  });
+  static navigationOptions = {
+    title: "Button Screen"
+  };
 
   render() {
     return (

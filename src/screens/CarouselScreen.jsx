@@ -1,43 +1,40 @@
 import React from "react";
-import { Dimensions, SafeAreaView, ScrollView, View } from "react-native";
+import { Dimensions, StyleSheet, ScrollView, View, Text } from "react-native";
 import setTestId from "../helpers/setTestId";
 
 const styles = {
-  pageContainer: (backgroundColor) => ({
+  pageContainer: {
     flex: 1,
     width: Dimensions.get("window").width,
-    backgroundColor,
     justifyContent: "center",
     alignItems: "center"
-  }),
-  box: (color) => ({
-    backgroundColor: color,
-    width: 200,
-    height: 200
-  })
+  },
+  text: {
+    fontSize: 128,
+    fontWeight: "bold",
+    color: "white"
+  }
 };
 
-const Page = ({backgroundColor, color, ...props}) => (
-  <View {...props} style={styles.pageContainer(backgroundColor)}>
-    <View
-      style={styles.box(color)}
-    />
+const Page = ({number, style, ...props}) => (
+  <View
+    style={StyleSheet.flatten([styles.pageContainer, style])}
+    {...props}
+  >
+    <Text style={styles.text}>
+      {number}
+    </Text>
   </View>
 );
 
 class CarouselScreen extends React.Component {
-  static navigationOptions = () => ({
+  static navigationOptions = {
     title: "Carousel Screen",
-    headerTitleStyle: {
-      flex: 1,
-      textAlign: "center",
-      alignSelf:'center'
-    }
-  });
+  };
 
   render() {
     return (
-      <SafeAreaView
+      <View
         {...setTestId("carousel-screen")}
         style={{flex: 1}}
       >
@@ -48,21 +45,21 @@ class CarouselScreen extends React.Component {
         >
           <Page
             {...setTestId("page-one")}
-            backgroundColor="#FF8080"
-            color="#FF0000"
+            style={{backgroundColor: "#FF8080"}}
+            number={1}
           />
           <Page
             {...setTestId("page-two")}
-            backgroundColor="#90EE90"
-            color="#00FF00"
+            style={{backgroundColor: "#90EE90"}}
+            number={2}
           />
           <Page
             {...setTestId("page-three")}
-            backgroundColor="#ADD8E6"
-            color="#0000FF"
+            style={{backgroundColor: "#ADD8E6"}}
+            number={3}
           />
         </ScrollView>
-      </SafeAreaView>
+      </View>
     );
   }
 }

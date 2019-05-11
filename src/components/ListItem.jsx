@@ -4,14 +4,22 @@ import Pressable from "./Pressable";
 
 const styles = {
   container: {
-    padding: 16
+    padding: 16,
+    backgroundColor: "white"
+  },
+  text: {
+    color: "#414a4c"
   }
 };
 
 const ListItem = ({style, text, onPress, ...props}) => {
   return (
-    <Pressable style={StyleSheet.flatten([styles.container, style])} onPress={onPress} {...props}>
-      <Text>{text}</Text>
+    <Pressable
+      style={StyleSheet.flatten([styles.container, style])}
+      onPress={onPress}
+      {...props}
+    >
+      <Text style={styles.text}>{text}</Text>
     </Pressable>
   );
 };

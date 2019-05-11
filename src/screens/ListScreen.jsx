@@ -1,55 +1,33 @@
 import React, { Fragment } from "react";
-import { SafeAreaView, ScrollView, View } from "react-native";
+import { View, SafeAreaView, ScrollView } from "react-native";
 import setTestId from "../helpers/setTestId";
+import createList from "../helpers/createList";
+import ListItemSeparator from "../components/ListItemSeparator";
 import ListItem from "../components/ListItem";
 
 const styles = {
   container: {
-    flex: 1,
-    backgroundColor: "white"
-  },
-  separator: {
-    height: 1,
-    backgroundColor: "lightgrey"
+    flex: 1
   }
-};
-
-const createList = (count) => {
-  let result = [];
-
-  for (let i = 0; i < count; i += 1) {
-    result.push({
-      key: i.toString(),
-      testId: `list-item-${i}`,
-      text: `Item ${i + 1}`
-    });
-  }
-
-  return result;
 };
 
 class FlatListScreen extends React.Component {
-  static navigationOptions = () => ({
-    title: "List Screen",
-    headerTitleStyle: {
-      flex: 1,
-      textAlign: "center",
-      alignSelf:'center'
-    }
-  });
+  static navigationOptions = {
+    title: "List Screen"
+  };
 
   render() {
     const list = createList(30);
 
     return (
-      <SafeAreaView
+      <View
         {...setTestId("list-screen")}
         style={styles.container}
       >
         <ScrollView>
           {list.map((item, index) => (
             <Fragment key={item.key}>
-              {index ? <View style={styles.separator} /> : null}
+              {index ? <ListItemSeparator /> : null}
               <ListItem
                 {...setTestId(item.testId)}
                 text={item.text}
@@ -57,8 +35,11 @@ class FlatListScreen extends React.Component {
               />
             </Fragment>
           ))}
+          <SafeAreaView>
+            <ListItemSeparator />
+          </SafeAreaView>
         </ScrollView>
-      </SafeAreaView>
+      </View>
     );
   }
 }

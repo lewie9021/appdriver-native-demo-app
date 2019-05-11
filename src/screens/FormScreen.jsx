@@ -5,14 +5,9 @@ import TextInput from "../components/TextInput";
 import Button from "../components/Button";
 
 class FormScreen extends React.Component {
-  static navigationOptions = () => ({
-    title: "Form Screen",
-    headerTitleStyle: {
-      flex: 1,
-      textAlign: "center",
-      alignSelf:'center'
-    }
-  });
+  static navigationOptions = {
+    title: "Form Screen"
+  };
 
   render() {
     return (

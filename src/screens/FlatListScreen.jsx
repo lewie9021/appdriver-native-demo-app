@@ -1,63 +1,51 @@
 import React from "react";
 import { SafeAreaView, FlatList, View } from "react-native";
 import setTestId from "../helpers/setTestId";
+import createList from "../helpers/createList";
+import ListItemSeparator from "../components/ListItemSeparator";
 import ListItem from "../components/ListItem";
 
 const styles = {
   container: {
-    flex: 1,
-    backgroundColor: "white"
+    flex: 1
   },
-  separator: {
-    height: 1,
-    backgroundColor: "lightgrey"
+  footer: {
+    borderTopWidth: 1,
+    borderTopColor: "lightgrey"
   }
-};
-
-const createList = (count) => {
-  let result = [];
-
-  for (let i = 0; i < count; i += 1) {
-    result.push({
-      key: i.toString(),
-      text: `Item ${i + 1}`
-    });
-  }
-
-  return result;
 };
 
 class FlatListScreen extends React.Component {
-  static navigationOptions = () => ({
-    title: "Flat List Screen",
-    headerTitleStyle: {
-      flex: 1,
-      textAlign: "center",
-      alignSelf:'center'
-    }
-  });
+  static navigationOptions = {
+    title: "FlatList Screen",
+  };
+
+  renderItem = ({item}) => (
+    <ListItem
+      text={item.text}
+      onPress={() => {}}
+    />
+  );
 
   render() {
-    const list = createList(30);
+    const list = createList(100);
 
     return (
-      <SafeAreaView
+      <View
         {...setTestId("flatlist-screen")}
         style={styles.container}
       >
         <FlatList
           data={list}
-          renderItem={({item}) => (
-            <ListItem
-              text={item.text}
-              onPress={() => {}}
-            />
-          )}
-          ItemSeparatorComponent={() => (
-            <View style={styles.separator} />
+          renderItem={this.renderItem}
+          ItemSeparatorComponent={ListItemSeparator}
+          ListFooterComponent={() => (
+            <SafeAreaView>
+              <ListItemSeparator />
+            </SafeAreaView>
           )}
         />
-      </SafeAreaView>
+      </View>
     );
   }
 }
