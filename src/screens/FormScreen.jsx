@@ -1,5 +1,5 @@
 import React from "react";
-import { SafeAreaView, ScrollView, Slider } from "react-native";
+import { SafeAreaView, ScrollView, Slider, Switch } from "react-native";
 import setTestId from "../helpers/setTestId";
 import TextInput from "../components/TextInput";
 import Button from "../components/Button";
@@ -31,6 +31,10 @@ class FormScreen extends React.Component {
             step={0.1}
             minimumTrackTintColor="#0000FF"
             maximumTrackTintColor="#000000"
+          />
+          <Switch
+            {...setTestId("switch")}
+            value={true}
           />
           <Button
             {...setTestId("button")}
