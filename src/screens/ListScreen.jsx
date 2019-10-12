@@ -24,7 +24,9 @@ class FlatListScreen extends React.Component {
         {...setTestId("list-screen")}
         style={styles.container}
       >
-        <ScrollView>
+        <ScrollView
+          {...setTestId("scroll-view")}
+        >
           {list.map((item, index) => (
             <Fragment key={item.key}>
               {index ? <ListItemSeparator /> : null}
