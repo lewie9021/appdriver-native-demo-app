@@ -1,6 +1,7 @@
 import React from "react";
 import { StatusBar } from "react-native";
-import { createStackNavigator, createAppContainer } from "react-navigation";
+import { createAppContainer } from "react-navigation";
+import { createStackNavigator } from "react-navigation-stack";
 import MenuScreen from "./screens/MenuScreen";
 import FormScreen from "./screens/FormScreen";
 import CarouselScreen from "./screens/CarouselScreen";
