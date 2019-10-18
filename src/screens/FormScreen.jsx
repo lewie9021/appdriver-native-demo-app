@@ -23,9 +23,6 @@ class FormScreen extends React.Component {
           <TextInput
             {...setTestId("text-input")}
             style={{ marginBottom: 20 }}
-            // textContentType="password"
-            // autoCompleteType="password"
-            // secureTextEntry={true}
           />
           <Slider
             {...setTestId("slider-input")}
@@ -39,12 +36,11 @@ class FormScreen extends React.Component {
           <Switch
             {...setTestId("switch")}
             style={{ marginBottom: 20 }}
+            accessibilityRole="switch" // Due to a bug in RN. See: https://github.com/facebook/react-native/issues/26873
             value={true}
           />
           <Button
             {...setTestId("button")}
-            // disabled={true}
-            // accessibilityStates={["disabled"]} // Required for enabled attribute to work.
             text="Button"
             onPress={() => alert("Tap")}
             onLongPress={() => alert("Long Press")}
