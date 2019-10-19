@@ -10,6 +10,12 @@ class FormScreen extends React.Component {
     title: "Form Screen"
   };
 
+  state = {
+    text: "",
+    slider: 0,
+    switch: false
+  };
+
   render() {
     return (
       <SafeAreaView
@@ -23,10 +29,14 @@ class FormScreen extends React.Component {
           <TextInput
             {...setTestId("text-input")}
             style={{ marginBottom: 20 }}
+            value={this.state.text}
+            onChangeText={(text) => this.setState({ text })}
           />
           <Slider
             {...setTestId("slider-input")}
             style={{ flex: 1, height: 40, marginBottom: 20 }}
+            value={this.state.slider}
+            onValueChange={(value) => this.setState({ slider: value })}
             minimumValue={0}
             maximumValue={1}
             step={0.1}
@@ -36,8 +46,9 @@ class FormScreen extends React.Component {
           <Switch
             {...setTestId("switch")}
             style={{ marginBottom: 20 }}
+            value={this.state.switch}
+            onValueChange={(value) => this.setState({ switch: value })}
             accessibilityRole="switch" // Due to a bug in RN. See: https://github.com/facebook/react-native/issues/26873
-            value={true}
           />
           <Button
             {...setTestId("button")}
