@@ -9,6 +9,7 @@
     "sim:ios": "yarn react-native run-ios --simulator 'iPhone X'",
     "sim:ios:release": "yarn sim:ios --configuration Release",
     "sim:android": "yarn run:pixel2 && yarn react-native run-android",
+    "sim:android:release": "yarn run:pixel2 && yarn react-native run-android --variant release",
     "run:pixel2": "nohup emulator -avd Pixel_2_API_27 >/dev/null &"
   },
   "dependencies": {

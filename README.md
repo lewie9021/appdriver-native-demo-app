@@ -1,12 +1,34 @@
 # AppDriver Native Demo App
 
-Contains sample screens to demonstrate common scenarios.
+A simple React Native demo app containing sample screens to demonstrate common scenarios.
 
 ## Screenshots
 
 ![Menu Screen Screenshot](./assets/menu-screen-screenshot.png "Menu Screen Screenshot")
 ![Form Screen Screenshot](./assets/form-screen-screenshot.png "Form Screen Screenshot")
 ![Carousel Screen Screenshot](./assets/carousel-screen-screenshot.png "Carousel Screen Screenshot")
+
+## Getting Started
+
+> Note: Be sure you have installed the package dependencies (`yarn install`).
+
+To simply automate the demo app you will need to do one of the following:
+
+**iOS (Simulator)**
+
+```
+yarn sim:ios:release
+```
+
+You can find the output .app asset at `./ios/build/NativeDemoApp/Build/Products/Release-iphonesimulator/NativeDemoApp.app`.
+
+**Android (Emulator or Device)**
+
+```
+yarn sim:android:release
+```
+
+You can find the output .apk asset at `./android/app/build/outputs/apk/release/app-release.apk`.
 
 ## Steps To Create
 
