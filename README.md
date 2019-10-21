@@ -75,6 +75,11 @@ Install Slider dependency (now it has been exacted from RN core)
 yarn add @react-native-community/slider@2.0.2
 ```
 
+Install Swipe List View dependency
+```
+yarn add react-native-swipe-list-view@2.0.3
+```
+
 Update metro.config.js to enable .jsx file extension
 ```
 resolver: {
