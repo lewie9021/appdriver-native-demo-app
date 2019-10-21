@@ -8,6 +8,7 @@ import CarouselScreen from "./screens/CarouselScreen";
 import FlatListScreen from "./screens/FlatListScreen";
 import ListScreen from "./screens/ListScreen";
 import ButtonScreen from "./screens/ButtonScreen";
+import SwipeableScreen from "./screens/SwipeableScreen";
 
 StatusBar.setBackgroundColor("#00CC00");
 StatusBar.setBarStyle("light-content");
@@ -18,7 +19,8 @@ const routes = {
   Carousel: CarouselScreen,
   FlatList: FlatListScreen,
   List: ListScreen,
-  Button: ButtonScreen
+  Button: ButtonScreen,
+  Swipeable: SwipeableScreen
 };
 
 const AppNavigator = createStackNavigator(routes, {
