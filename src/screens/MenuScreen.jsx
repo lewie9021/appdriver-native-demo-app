@@ -48,7 +48,7 @@ const list = [
   },
   {
     testId: "list-item-webview-screen",
-    text: "Webview Screen",
+    text: "WebView Screen",
     routeName: "WebView"
   }
 ];
