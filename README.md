@@ -80,6 +80,11 @@ Install Swipe List View dependency
 yarn add react-native-swipe-list-view@2.0.3
 ```
 
+Install WebView dependency.
+```
+yarn add react-native-webview@7.4.3
+```
+
 Update metro.config.js to enable .jsx file extension
 ```
 resolver: {
