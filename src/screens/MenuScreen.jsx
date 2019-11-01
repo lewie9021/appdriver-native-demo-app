@@ -45,6 +45,11 @@ const list = [
     testId: "list-item-swipeable-screen",
     text: "Swipeable Screen",
     routeName: "Swipeable"
+  },
+  {
+    testId: "list-item-webview-screen",
+    text: "Webview Screen",
+    routeName: "WebView"
   }
 ];
 
