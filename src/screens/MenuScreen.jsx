@@ -50,6 +50,11 @@ const list = [
     testId: "list-item-webview-screen",
     text: "WebView Screen",
     routeName: "WebView"
+  },
+  {
+    testId: "list-item-storage-screen",
+    text: "Storage Screen",
+    routeName: "Storage"
   }
 ];
 

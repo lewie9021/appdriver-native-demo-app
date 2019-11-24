@@ -13,6 +13,7 @@
     "run:pixel2": "nohup emulator -avd Pixel_2_API_27 >/dev/null &"
   },
   "dependencies": {
+    "@react-native-community/async-storage": "1.6.3",
     "@react-native-community/slider": "2.0.2",
     "react": "16.8.1",
     "react-native": "0.61.2",

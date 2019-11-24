@@ -85,6 +85,11 @@ Install WebView dependency.
 yarn add react-native-webview@7.4.3
 ```
 
+Install Async Storage dependency.
+```
+yarn add @react-native-community/async-storage@1.6.3
+```
+
 Update metro.config.js to enable .jsx file extension
 ```
 resolver: {

@@ -10,6 +10,7 @@ import ListScreen from "./screens/ListScreen";
 import ButtonScreen from "./screens/ButtonScreen";
 import SwipeableScreen from "./screens/SwipeableScreen";
 import WebViewScreen from "./screens/WebViewScreen";
+import StorageScreen from "./screens/StorageScreen";
 
 StatusBar.setBackgroundColor("#00CC00");
 StatusBar.setBarStyle("light-content");
@@ -23,6 +24,7 @@ const routes = {
   Button: ButtonScreen,
   Swipeable: SwipeableScreen,
   WebView: WebViewScreen,
+  Storage: StorageScreen
 };
 
 const AppNavigator = createStackNavigator(routes, {
