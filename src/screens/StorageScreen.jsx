@@ -21,11 +21,12 @@ class StorageScreen extends React.Component {
   render() {
     return (
       <View
-        {...setTestId("form-screen")}
+        {...setTestId("storage-screen")}
         style={{ flex: 1, justifyContent: "center", padding: 16 }}
       >
         <Text style={{ fontSize: 24, fontWeight: "bold", textAlign: "center", marginBottom: 32}}>{this.state.count}</Text>
         <Button
+          {...setTestId("save-button")}
           text="Save"
           onPress={() => {
             const count = "5";
