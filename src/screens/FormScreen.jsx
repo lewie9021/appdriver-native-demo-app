@@ -1,5 +1,5 @@
 import React from "react";
-import { SafeAreaView, ScrollView, Switch } from "react-native";
+import { SafeAreaView, ScrollView, Switch, Alert } from "react-native";
 import Slider from "@react-native-community/slider";
 import setTestId from "../helpers/setTestId";
 import TextInput from "../components/TextInput";
@@ -53,8 +53,22 @@ class FormScreen extends React.Component {
           <Button
             {...setTestId("button")}
             text="Button"
-            onPress={() => alert("Tap")}
-            onLongPress={() => alert("Long Press")}
+            onPress={(e) => {
+              Alert.alert(
+                "Tap",
+                JSON.stringify({
+                  x: e.nativeEvent.locationX,
+                  y: e.nativeEvent.locationY
+                }, null, 2))
+            }}
+            onLongPress={(e) => {
+              Alert.alert(
+                "Long Press",
+                JSON.stringify({
+                  x: e.nativeEvent.locationX,
+                  y: e.nativeEvent.locationY
+                }, null, 2))
+            }}
           />
         </ScrollView>
       </SafeAreaView>
