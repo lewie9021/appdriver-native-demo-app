@@ -10,6 +10,7 @@ import ListScreen from "./screens/ListScreen";
 import ButtonScreen from "./screens/ButtonScreen";
 import SwipeableScreen from "./screens/SwipeableScreen";
 import WebViewScreen from "./screens/WebViewScreen";
+import ZoomScreen from "./screens/ZoomScreen";
 import StorageScreen from "./screens/StorageScreen";
 
 StatusBar.setBackgroundColor("#00CC00");
@@ -24,6 +25,7 @@ const routes = {
   Button: ButtonScreen,
   Swipeable: SwipeableScreen,
   WebView: WebViewScreen,
+  Zoom: ZoomScreen,
   Storage: StorageScreen
 };
 

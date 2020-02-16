@@ -52,6 +52,11 @@ const list = [
     routeName: "WebView"
   },
   {
+    testId: "list-item-zoom-screen",
+    text: "Zoom Screen",
+    routeName: "Zoom"
+  },
+  {
     testId: "list-item-storage-screen",
     text: "Storage Screen",
     routeName: "Storage"
