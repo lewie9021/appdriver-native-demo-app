@@ -1,6 +1,7 @@
 import * as React from "react";
 import { View, Dimensions, Animated } from "react-native";
 import { PinchGestureHandler, State } from "react-native-gesture-handler";
+import setTestId from "../helpers/setTestId";
 
 const { width } = Dimensions.get("window");
 
@@ -26,12 +27,16 @@ class ZoomScreen extends React.Component {
 
   render() {
     return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <View
+        {...setTestId("zoom-screen")}
+        style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+      >
         <PinchGestureHandler
           onGestureEvent={this.onZoomEvent}
           onHandlerStateChange={this.onZoomStateChange}
         >
           <Animated.Image
+            {...setTestId("image")}
             source={require("../image.jpeg")}
             style={{
               width,
