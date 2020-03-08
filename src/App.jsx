@@ -12,6 +12,7 @@ import SwipeableScreen from "./screens/SwipeableScreen";
 import WebViewScreen from "./screens/WebViewScreen";
 import ZoomScreen from "./screens/ZoomScreen";
 import StorageScreen from "./screens/StorageScreen";
+import DatePickerScreen from "./screens/DatePickerScreen";
 
 StatusBar.setBackgroundColor("#00CC00");
 StatusBar.setBarStyle("light-content");
@@ -26,7 +27,8 @@ const routes = {
   Swipeable: SwipeableScreen,
   WebView: WebViewScreen,
   Zoom: ZoomScreen,
-  Storage: StorageScreen
+  Storage: StorageScreen,
+  DatePicker: DatePickerScreen
 };
 
 const AppNavigator = createStackNavigator(routes, {
