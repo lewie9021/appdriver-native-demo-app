@@ -90,6 +90,11 @@ Install Async Storage dependency.
 yarn add @react-native-community/async-storage@1.6.3
 ```
 
+Install Date Time Picker dependency.
+```
+yarn add @react-native-community/datetimepicker@2.2.3
+```
+
 Update metro.config.js to enable .jsx file extension
 ```
 resolver: {

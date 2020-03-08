@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@react-native-community/async-storage": "1.6.3",
+    "@react-native-community/datetimepicker": "2.2.3",
     "@react-native-community/slider": "2.0.2",
     "react": "16.8.1",
     "react-native": "0.61.2",

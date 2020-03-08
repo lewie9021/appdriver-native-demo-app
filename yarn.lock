@@ -938,6 +938,13 @@
     shell-quote "1.6.1"
     ws "^1.1.0"
 
+"@react-native-community/datetimepicker@2.2.3":
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/@react-native-community/datetimepicker/-/datetimepicker-2.2.3.tgz#d42665d0bd79681b404165eeafa988abb292e126"
+  integrity sha512-UcSe5faKL2E5bB9icl5Cr2eDzAM9kZ+6oMVvK/UqbP1ImAp8qB0+x+zEyoTyPo1+nRfu4Ujhpid8CoMEPP12YA==
+  dependencies:
+    invariant "^2.2.4"
+
 "@react-native-community/eslint-config@0.0.3":
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/@react-native-community/eslint-config/-/eslint-config-0.0.3.tgz#bf9be8434caa18f85b570cf4e28366f2a7f1ea91"
