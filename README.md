@@ -8,7 +8,7 @@ A simple React Native demo app containing sample screens to demonstrate common s
 
 ## Getting Started
 
-> Note: Be sure you have installed the package dependencies (`yarn install`).
+> Note: Be sure you have installed the package dependencies (`yarn install`) and installed Pods (`cd ios && pod install && cd ..`).
 
 To simply automate the demo app you will need to do one of the following:
 
