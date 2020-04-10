@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import { FlatList, View } from "react-native";
-import setTestId from "../helpers/setTestId";
+
 import ListItem from "../components/ListItem";
 import ListItemSeparator from "../components/ListItemSeparator";
+import setTestId from "../helpers/setTestId";
 
 const styles = {
   container: {
@@ -68,35 +69,33 @@ const list = [
   }
 ];
 
-class MenuScreen extends React.Component {
-  static navigationOptions = {
-    title: "Menu"
-  };
+const MenuScreen = ({ navigation }) => {
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      title: "Menu"
+    })
+  }, []);
 
-  render() {
-    const { navigation } = this.props;
-
-    return (
-      <View
-        {...setTestId("menu-screen")}
-        style={styles.container}
-      >
-        <FlatList
-          data={list}
-          renderItem={({item}) => (
-            <ListItem
-              {...setTestId(item.testId)}
-              text={item.text}
-              onPress={() => navigation.navigate(item.routeName)}
-            />
-          )}
-          keyExtractor={(item) => item.testId}
-          ItemSeparatorComponent={ListItemSeparator}
-          ListFooterComponent={<ListItemSeparator />}
-        />
-      </View>
-    );
-  }
+  return (
+    <View
+      {...setTestId("menu-screen")}
+      style={styles.container}
+    >
+      <FlatList
+        data={list}
+        renderItem={({item}) => (
+          <ListItem
+            {...setTestId(item.testId)}
+            text={item.text}
+            onPress={() => navigation.navigate(item.routeName)}
+          />
+        )}
+        keyExtractor={(item) => item.testId}
+        ItemSeparatorComponent={ListItemSeparator}
+        ListFooterComponent={<ListItemSeparator />}
+      />
+    </View>
+  );
 }
 
 export default MenuScreen;
