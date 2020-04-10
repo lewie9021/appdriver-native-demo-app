@@ -1,5 +1,5 @@
 import React, { useLayoutEffect } from "react";
-import { StatusBar } from "react-native";
+import { Platform, StatusBar } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
@@ -19,7 +19,10 @@ const Stack = createStackNavigator();
 
 const App = () => {
   useLayoutEffect(() => {
-    StatusBar.setBackgroundColor("#00CC00");
+    if (Platform.OS === "android") {
+      StatusBar.setBackgroundColor("#00CC00");
+    }
+
     StatusBar.setBarStyle("light-content");
   }, []);
 
