@@ -32,7 +32,7 @@ You can find the output .apk asset at `./android/app/build/outputs/apk/release/a
 
 Install React Native template
 ```
-npx react-native-cli init NativeDemoApp --version 0.61.2
+npx react-native-cli init NativeDemoApp --version 0.61.5
 ```
 
 Install React Navigation dependencies
