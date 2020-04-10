@@ -15,6 +15,6 @@ module.exports = {
     }),
   },
   resolver: {
-    sourceExts: ["jsx", "js", "json"]
+    sourceExts: ["jsx", "tsx", "js", "ts", "json"]
   }
 };

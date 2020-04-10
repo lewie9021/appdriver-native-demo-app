@@ -38,36 +38,25 @@ npx react-native-cli init NativeDemoApp --version 0.61.5
 Install React Navigation dependencies
 ```
 yarn add \
-  react-navigation@4.0.10 \
-  react-native-gesture-handler@1.4.1 \
-  react-native-reanimated@1.3.0 \
-  react-native-screens@1.0.0-alpha.23 \
-  react-navigation-stack@1.9.4
+  @react-navigation/native@5.1.5 \
+  @react-navigation/stack@5.2.10 \
+  react-native-reanimated@1.8.0 \
+  react-native-gesture-handler@1.6.1 \
+  react-native-screens@2.4.0 \
+  react-native-safe-area-context@0.7.3 \
+  @react-native-community/masked-view@0.1.7
 ```
 
-Configure Android `app/build.gradle` for Navigation. Add the following to the `dependencies` section.
+To support .jsx file extensions and make React Navigation work. Update `metro.config.js`:
 ```
-implementation 'androidx.appcompat:appcompat:1.1.0-rc01'
-implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-alpha02'
-```
-
-Configure Android `MainActivity.java` for Navigation. Add the following to the imports and the class respectively:
-```
-import com.facebook.react.ReactActivityDelegate;
-import com.facebook.react.ReactRootView;
-import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView;
-```
-
-```
-@Override
-protected ReactActivityDelegate createReactActivityDelegate() {
-  return new ReactActivityDelegate(this, getMainComponentName()) {
-    @Override
-    protected ReactRootView createRootView() {
-      return new RNGestureHandlerEnabledRootView(MainActivity.this);
-    }
-  };
+resolver: {
+  sourceExts: ["jsx", "tsx", "js", "ts", "json"]
 }
+```
+
+Configure React Native Gesture Handler for navigation. Add the following to `index.js`:
+```
+import "react-native-gesture-handler";
 ```
 
 Install Slider dependency (now it has been exacted from RN core)
@@ -93,13 +82,6 @@ yarn add @react-native-community/async-storage@1.6.3
 Install Date Time Picker dependency.
 ```
 yarn add @react-native-community/datetimepicker@2.2.3
-```
-
-Update metro.config.js to enable .jsx file extension
-```
-resolver: {
-  sourceExts: ["jsx", "js", "json"]
-}
 ```
 
 To finish, replace template files with source code (be sure to replace index.js and remove App.js).
