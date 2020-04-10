@@ -1,6 +1,5 @@
 import React, { useLayoutEffect } from "react";
 import { FlatList, View } from "react-native";
-
 import ListItem from "../components/ListItem";
 import ListItemSeparator from "../components/ListItemSeparator";
 import setTestId from "../helpers/setTestId";

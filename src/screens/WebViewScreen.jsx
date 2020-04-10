@@ -1,31 +1,25 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import { View } from "react-native";
-import setTestId from "../helpers/setTestId";
 import WebView from "react-native-webview";
+import setTestId from "../helpers/setTestId";
 
-const styles = {
-  container: {
-    flex: 1
-  },
-};
+const WebViewScreen = ({ navigation }) => {
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      title: "WebView Screen"
+    })
+  }, []);
 
-class WebViewScreen extends React.Component {
-  static navigationOptions = {
-    title: "WebView Screen"
-  };
-
-  render() {
-    return (
-      <View
-        {...setTestId("webview-screen")}
-        style={styles.container}
-      >
-        <WebView
-          source={{ uri: "https://google.com" }}
-        />
-      </View>
-    );
-  }
+  return (
+    <View
+      {...setTestId("webview-screen")}
+      style={{ flex: 1 }}
+    >
+      <WebView
+        source={{ uri: "https://google.com" }}
+      />
+    </View>
+  );
 }
 
 export default WebViewScreen;

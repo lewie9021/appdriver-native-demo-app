@@ -1,14 +1,11 @@
-import React from "react";
-import { SafeAreaView, Text, View } from "react-native";
+import React, { useLayoutEffect } from "react";
+import { View, Text } from "react-native";
 import { SwipeRow } from "react-native-swipe-list-view";
+import Card from "../components/Card";
 import Pressable from "../components/Pressable";
 import setTestId from "../helpers/setTestId";
 
 const styles = {
-  container: {
-    flex: 1,
-    justifyContent: "center"
-  },
   rowFront: {
     alignItems: "center",
     backgroundColor: "#CCC",
@@ -29,17 +26,16 @@ const styles = {
   }
 };
 
-class SwipeableScreen extends React.Component {
-  static navigationOptions = {
-    title: "Swipeable Screen"
-  };
+const SwipeableScreen = ({ navigation }) => {
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      title: "Swipeable Screen"
+    })
+  }, []);
 
-  render() {
-    return (
-      <SafeAreaView
-        {...setTestId("swipeable-screen")}
-        style={styles.container}
-      >
+  return (
+    <View {...setTestId("swipeable-screen")}>
+      <Card>
         <View {...setTestId("list-item")}>
           <SwipeRow
             disableRightSwipe={true}
@@ -59,9 +55,9 @@ class SwipeableScreen extends React.Component {
             </View>
           </SwipeRow>
         </View>
-      </SafeAreaView>
-    );
-  }
+      </Card>
+    </View>
+  );
 }
 
 export default SwipeableScreen;

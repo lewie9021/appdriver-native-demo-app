@@ -1,42 +1,42 @@
-import React from "react";
+import React, { useLayoutEffect, useState } from "react";
 import { SafeAreaView, ScrollView, Switch, Alert } from "react-native";
 import Slider from "@react-native-community/slider";
-import setTestId from "../helpers/setTestId";
-import TextInput from "../components/TextInput";
+import Card from "../components/Card";
 import Button from "../components/Button";
+import TextInput from "../components/TextInput";
+import setTestId from "../helpers/setTestId";
 
-class FormScreen extends React.Component {
-  static navigationOptions = {
-    title: "Form Screen"
-  };
+const FormScreen = ({ navigation }) => {
+  const [ text, setText ] = useState("");
+  const [ slider, setSlider ] = useState(0);
+  const [ switcher, setSwitcher ] = useState(false);
 
-  state = {
-    text: "",
-    slider: 0,
-    switch: false
-  };
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      title: "Form Screen"
+    })
+  }, []);
 
-  render() {
-    return (
-      <SafeAreaView
-        {...setTestId("form-screen")}
+  return (
+    <SafeAreaView
+      {...setTestId("form-screen")}
+      style={{ flex: 1 }}
+    >
+      <ScrollView
         style={{ flex: 1 }}
       >
-        <ScrollView
-          style={{ flex: 1 }}
-          contentContainerStyle={{ padding: 16 }}
-        >
+        <Card padding={true}>
           <TextInput
             {...setTestId("text-input")}
             style={{ marginBottom: 20 }}
-            value={this.state.text}
-            onChangeText={(text) => this.setState({ text })}
+            value={text}
+            onChangeText={setText}
           />
           <Slider
             {...setTestId("slider-input")}
             style={{ flex: 1, height: 40, marginBottom: 20 }}
-            value={this.state.slider}
-            onValueChange={(value) => this.setState({ slider: value })}
+            value={slider}
+            onValueChange={setSlider}
             minimumValue={0}
             maximumValue={1}
             step={0.1}
@@ -46,8 +46,8 @@ class FormScreen extends React.Component {
           <Switch
             {...setTestId("switch")}
             style={{ marginBottom: 20 }}
-            value={this.state.switch}
-            onValueChange={(value) => this.setState({ switch: value })}
+            value={switcher}
+            onValueChange={setSwitcher}
             accessibilityRole="switch" // Due to a bug in RN. See: https://github.com/facebook/react-native/issues/26873
           />
           <Button
@@ -70,10 +70,10 @@ class FormScreen extends React.Component {
                 }, null, 2))
             }}
           />
-        </ScrollView>
-      </SafeAreaView>
-    );
-  }
+        </Card>
+      </ScrollView>
+    </SafeAreaView>
+  );
 }
 
 export default FormScreen;

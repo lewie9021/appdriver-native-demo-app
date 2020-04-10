@@ -4,16 +4,16 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import MenuScreen from "./screens/MenuScreen";
-// import FormScreen from "./screens/FormScreen";
-// import CarouselScreen from "./screens/CarouselScreen";
-// import FlatListScreen from "./screens/FlatListScreen";
-// import ListScreen from "./screens/ListScreen";
+import FormScreen from "./screens/FormScreen";
+import CarouselScreen from "./screens/CarouselScreen";
+import FlatListScreen from "./screens/FlatListScreen";
+import ListScreen from "./screens/ListScreen";
 import ButtonScreen from "./screens/ButtonScreen";
-// import SwipeableScreen from "./screens/SwipeableScreen";
-// import WebViewScreen from "./screens/WebViewScreen";
-// import ZoomScreen from "./screens/ZoomScreen";
-// import StorageScreen from "./screens/StorageScreen";
-// import DatePickerScreen from "./screens/DatePickerScreen";
+import SwipeableScreen from "./screens/SwipeableScreen";
+import WebViewScreen from "./screens/WebViewScreen";
+import ZoomScreen from "./screens/ZoomScreen";
+import StorageScreen from "./screens/StorageScreen";
+import DatePickerScreen from "./screens/DatePickerScreen";
 
 const Stack = createStackNavigator();
 
@@ -40,17 +40,50 @@ const App = () => {
           }
         }}
       >
-        <Stack.Screen name="Menu" component={MenuScreen} />
-        {/*<Stack.Screen name="Form" component={FormScreen} />*/}
-        {/*<Stack.Screen name="Carousel" component={CarouselScreen} />*/}
-        {/*<Stack.Screen name="FlatList" component={FlatListScreen} />*/}
-        {/*<Stack.Screen name="List" component={ListScreen} />*/}
-        <Stack.Screen name="Button" component={ButtonScreen} />
-        {/*<Stack.Screen name="Swipeable" component={SwipeableScreen} />*/}
-        {/*<Stack.Screen name="WebView" component={WebViewScreen} />*/}
-        {/*<Stack.Screen name="Zoom" component={ZoomScreen} />*/}
-        {/*<Stack.Screen name="Storage" component={StorageScreen} />*/}
-        {/*<Stack.Screen name="DatePicker" component={DatePickerScreen} />*/}
+        <Stack.Screen
+          name="Menu"
+          component={MenuScreen}
+        />
+        <Stack.Screen
+          name="Form"
+          component={FormScreen}
+        />
+        <Stack.Screen
+          name="Carousel"
+          component={CarouselScreen}
+        />
+        <Stack.Screen
+          name="FlatList"
+          component={FlatListScreen}
+        />
+        <Stack.Screen
+          name="List"
+          component={ListScreen}
+        />
+        <Stack.Screen
+          name="Button"
+          component={ButtonScreen}
+        />
+        <Stack.Screen
+          name="Swipeable"
+          component={SwipeableScreen}
+        />
+        <Stack.Screen
+          name="WebView"
+          component={WebViewScreen}
+        />
+        <Stack.Screen
+          name="Zoom"
+          component={ZoomScreen}
+        />
+        <Stack.Screen
+          name="Storage"
+          component={StorageScreen}
+        />
+        <Stack.Screen
+          name="DatePicker"
+          component={DatePickerScreen}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

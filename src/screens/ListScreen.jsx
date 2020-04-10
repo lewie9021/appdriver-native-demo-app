@@ -1,49 +1,38 @@
-import React, { Fragment } from "react";
-import { View, SafeAreaView, ScrollView } from "react-native";
-import setTestId from "../helpers/setTestId";
-import createList from "../helpers/createList";
+import React, { Fragment, useLayoutEffect, useMemo } from "react";
+import { ScrollView } from "react-native";
+import { useSafeArea } from "react-native-safe-area-context";
 import ListItemSeparator from "../components/ListItemSeparator";
 import ListItem from "../components/ListItem";
+import createList from "../helpers/createList";
+import setTestId from "../helpers/setTestId";
 
-const styles = {
-  container: {
-    flex: 1
-  }
-};
+const ListScreen = ({ navigation }) => {
+  const insets = useSafeArea();
+  const list = useMemo(() => createList(30), []);
 
-class FlatListScreen extends React.Component {
-  static navigationOptions = {
-    title: "List Screen"
-  };
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      title: "List Screen"
+    })
+  }, []);
 
-  render() {
-    const list = createList(30);
-
-    return (
-      <View
-        {...setTestId("list-screen")}
-        style={styles.container}
-      >
-        <ScrollView
-          {...setTestId("scroll-view")}
-        >
-          {list.map((item, index) => (
-            <Fragment key={item.key}>
-              {index ? <ListItemSeparator /> : null}
-              <ListItem
-                {...setTestId(item.testId)}
-                text={item.text}
-                onPress={() => alert(item.text)}
-              />
-            </Fragment>
-          ))}
-          <SafeAreaView>
-            <ListItemSeparator />
-          </SafeAreaView>
-        </ScrollView>
-      </View>
-    );
-  }
+  return (
+    <ScrollView
+      {...setTestId("scroll-view")}
+      contentContainerStyle={{ paddingBottom: insets.bottom }}
+    >
+      {list.map((item) => (
+        <Fragment key={item.key}>
+          <ListItem
+            {...setTestId(item.testId)}
+            text={item.text}
+            onPress={() => alert(item.text)}
+          />
+          <ListItemSeparator />
+        </Fragment>
+      ))}
+    </ScrollView>
+  );
 }
 
-export default FlatListScreen;
+export default ListScreen;

@@ -1,30 +1,39 @@
-import React from "react";
+import React, { useLayoutEffect, useEffect, useState } from "react";
 import { View, Text } from "react-native";
 import AsyncStorage from "@react-native-community/async-storage";
-import setTestId from "../helpers/setTestId";
+import Card from "../components/Card";
 import Button from "../components/Button";
+import setTestId from "../helpers/setTestId";
 
-class StorageScreen extends React.Component {
-  static navigationOptions = {
-    title: "Storage Screen"
-  };
+const StorageScreen = ({ navigation }) => {
+  const [ count, setCount ] = useState(null);
 
-  state = {
-    count: null
-  };
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      title: "Storage Screen"
+    })
+  }, []);
 
-  componentDidMount() {
-    return AsyncStorage.getItem("count")
-      .then((x) => this.setState({ count: x }));
-  }
+  useEffect(() => {
+    AsyncStorage.getItem("count")
+      .then(setCount);
+  }, []);
 
-  render() {
-    return (
-      <View
-        {...setTestId("storage-screen")}
-        style={{ flex: 1, justifyContent: "center", padding: 16 }}
-      >
-        <Text style={{ fontSize: 24, fontWeight: "bold", textAlign: "center", marginBottom: 32}}>{this.state.count}</Text>
+  return (
+    <View
+      {...setTestId("storage-screen")}
+    >
+      <Card padding={true}>
+        <Text
+          style={{
+            fontSize: 24,
+            fontWeight: "bold",
+            textAlign: "center",
+            marginBottom: 32
+          }}
+        >
+          {count}
+        </Text>
         <Button
           {...setTestId("save-button")}
           text="Save"
@@ -32,12 +41,13 @@ class StorageScreen extends React.Component {
             const count = "5";
 
             AsyncStorage.setItem("count", count)
-              .then(() => this.setState({ count }));
+              .then(() => AsyncStorage.getItem("count"))
+              .then(setCount);
           }}
         />
-      </View>
-    );
-  }
+      </Card>
+    </View>
+  );
 }
 
 export default StorageScreen;

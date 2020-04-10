@@ -1,53 +1,34 @@
-import React from "react";
-import { SafeAreaView, FlatList, View } from "react-native";
-import setTestId from "../helpers/setTestId";
-import createList from "../helpers/createList";
+import React, { useLayoutEffect, useMemo } from "react";
+import { FlatList } from "react-native";
+import { useSafeArea } from "react-native-safe-area-context";
 import ListItemSeparator from "../components/ListItemSeparator";
 import ListItem from "../components/ListItem";
+import createList from "../helpers/createList";
 
-const styles = {
-  container: {
-    flex: 1
-  },
-  footer: {
-    borderTopWidth: 1,
-    borderTopColor: "lightgrey"
-  }
-};
+const FlatListScreen = ({ navigation }) => {
+  const insets = useSafeArea();
+  const list = useMemo(() => createList(100), []);
 
-class FlatListScreen extends React.Component {
-  static navigationOptions = {
-    title: "FlatList Screen",
-  };
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      title: "FlatList Screen"
+    })
+  }, []);
 
-  renderItem = ({item}) => (
-    <ListItem
-      text={item.text}
-      onPress={() => {}}
+  return (
+    <FlatList
+      contentContainerStyle={{ paddingBottom: insets.bottom }}
+      data={list}
+      renderItem={({item}) => (
+        <ListItem
+          text={item.text}
+          onPress={() => {}}
+        />
+      )}
+      ItemSeparatorComponent={ListItemSeparator}
+      ListFooterComponent={ListItemSeparator}
     />
   );
-
-  render() {
-    const list = createList(100);
-
-    return (
-      <View
-        {...setTestId("flatlist-screen")}
-        style={styles.container}
-      >
-        <FlatList
-          data={list}
-          renderItem={this.renderItem}
-          ItemSeparatorComponent={ListItemSeparator}
-          ListFooterComponent={() => (
-            <SafeAreaView>
-              <ListItemSeparator />
-            </SafeAreaView>
-          )}
-        />
-      </View>
-    );
-  }
 }
 
 export default FlatListScreen;
