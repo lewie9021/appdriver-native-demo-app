@@ -15,9 +15,9 @@ const styles = {
   }
 };
 
-const Button = ({text, onPress, ...props}) => (
+const Button = ({ style, text, onPress, ...props }) => (
   <Pressable
-    style={styles.container}
+    style={{ ...styles.container, ...style }}
     onPress={onPress}
     {...props}
   >
