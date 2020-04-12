@@ -65,6 +65,11 @@ const list = [
     testId: "list-item-date-picker-screen",
     text: "Date Picker Screen",
     routeName: "DatePicker"
+  },
+  {
+    testId: "list-item-alert-screen",
+    text: "Alert Screen",
+    routeName: "AlertScreen"
   }
 ];
 

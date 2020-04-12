@@ -14,6 +14,7 @@ import WebViewScreen from "./screens/WebViewScreen";
 import ZoomScreen from "./screens/ZoomScreen";
 import StorageScreen from "./screens/StorageScreen";
 import DatePickerScreen from "./screens/DatePickerScreen";
+import AlertScreen from "./screens/AlertScreen";
 
 const Stack = createStackNavigator();
 
@@ -83,6 +84,10 @@ const App = () => {
         <Stack.Screen
           name="DatePicker"
           component={DatePickerScreen}
+        />
+        <Stack.Screen
+          name="AlertScreen"
+          component={AlertScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
