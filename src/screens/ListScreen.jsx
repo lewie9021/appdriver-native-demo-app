@@ -18,7 +18,7 @@ const ListScreen = ({ navigation }) => {
 
   return (
     <ScrollView
-      {...setTestId("scroll-view")}
+      {...setTestId("list-screen")}
       contentContainerStyle={{ paddingBottom: insets.bottom }}
     >
       {list.map((item) => (

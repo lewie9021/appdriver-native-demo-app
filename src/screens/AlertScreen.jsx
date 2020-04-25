@@ -26,13 +26,20 @@ const ButtonScreen = ({ navigation }) => {
           }}
         />
         <Button
-          {...setTestId("cancel-alert-button")}
+          {...setTestId("confirm-alert-button")}
           style={{ marginBottom: 16 }}
-          text="Show Cancel Alert"
+          text="Show Confirm Alert"
           onPress={() => {
             Alert.alert("Alert", "Hello World!", [
-              { text: "Cancel", style: "cancel" },
-              { text: "OK" }
+              {
+                text: "Cancel",
+                style: "cancel",
+                onPress: () => Alert.alert("Alert", "Cancelled!")
+              },
+              {
+                text: "OK",
+                onPress: () => Alert.alert("Alert", "Accepted!")
+              }
             ]);
           }}
         />
