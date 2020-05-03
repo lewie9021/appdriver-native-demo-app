@@ -64,7 +64,7 @@ Install Slider dependency (now it has been exacted from RN core)
 yarn add @react-native-community/slider@2.0.2
 ```
 
-Install Swipe List View dependency
+Install Swipe List View dependency.
 ```bash
 yarn add react-native-swipe-list-view@2.0.3
 ```
@@ -84,10 +84,20 @@ Install Date Time Picker dependency.
 yarn add @react-native-community/datetimepicker@2.2.3
 ```
 
+Install React Native Keychain dependency.
+```bash
+yarn add react-native-keychain@6.0.0
+```
+
+To support Face ID, add the following to `ios/NativeDemoApp/Info.plist`:
+```xml
+<key>NSFaceIDUsageDescription</key>
+<string>Face ID is used to unlock your saved credentials</string>
+```
+
 Add support for automating Android WebViews by adding the following to `onCreate` within `MainApplication.java`:
 ```java
 WebView.setWebContentsDebuggingEnabled(true);
 ```
-
 
 To finish, replace template files with source code (be sure to replace index.js and remove App.js).
