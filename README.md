@@ -100,4 +100,64 @@ Add support for automating Android WebViews by adding the following to `onCreate
 WebView.setWebContentsDebuggingEnabled(true);
 ```
 
+Remove Flow, Prettier, ESLint and Jest dependencies.
+```bash
+rm -rf __tests__
+rm .eslintrc.js
+rm .flowconfig
+rm .prettierrc.js
+yarn remove \
+  @react-native-community/eslint-config \
+  babel-jest \
+  eslint \
+  jest \
+  react-test-renderer
+```
+
+Update iOS bundle ID.
+- Open Xcode and modify bundle ID for the main Target to `com.nativedemoapp`.
+
+Add deep link support for iOS by adding the following to `ios/NativeDemoApp/Info.plist`:
+```xml
+<key>CFBundleURLTypes</key>
+<array>
+    <dict>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+        <key>CFBundleURLName</key>
+        <string>App</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+            <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+        </array>
+    </dict>
+</array>
+```
+
+Add the following to `ios/NativeDemoApp/AppDelegate.m` to complete iOS deep linking support.
+```objective-c
+#import <React/RCTLinkingManager.h>
+
+- (BOOL)application:(UIApplication *)application
+   openURL:(NSURL *)url
+   options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
+{
+  return [RCTLinkingManager application:application openURL:url options:options];
+}
+```
+
+Add deep link support for Android by adding the following to `android/app/src/main/AndroidManifest.xml`.
+```xml
+<activity
+ android:name=".MainActivity"
+ android:launchMode="singleTask">
+  <intent-filter>
+    <action android:name="android.intent.action.VIEW" />
+    <category android:name="android.intent.category.DEFAULT" />
+    <category android:name="android.intent.category.BROWSABLE" />
+    <data android:scheme="${applicationId}" />
+  </intent-filter>
+</activity>
+```
+
 To finish, replace template files with source code (be sure to replace index.js and remove App.js).
