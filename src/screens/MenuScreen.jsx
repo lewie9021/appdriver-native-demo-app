@@ -1,5 +1,6 @@
 import React, { useLayoutEffect } from "react";
 import { FlatList, View } from "react-native";
+
 import ListItem from "../components/ListItem";
 import ListItemSeparator from "../components/ListItemSeparator";
 import setTestId from "../helpers/setTestId";
@@ -70,6 +71,11 @@ const list = [
     testId: "list-item-alert-screen",
     text: "Alert Screen",
     routeName: "AlertScreen"
+  },
+  {
+    testId: "list-item-biometrics-screen",
+    text: "Biometrics Screen",
+    routeName: "BiometricsScreen"
   }
 ];
 

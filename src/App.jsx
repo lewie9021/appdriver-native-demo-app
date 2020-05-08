@@ -15,6 +15,7 @@ import ZoomScreen from "./screens/ZoomScreen";
 import StorageScreen from "./screens/StorageScreen";
 import DatePickerScreen from "./screens/DatePickerScreen";
 import AlertScreen from "./screens/AlertScreen";
+import BiometricsScreen from "./screens/BiometricsScreen";
 
 const Stack = createStackNavigator();
 
@@ -88,6 +89,10 @@ const App = () => {
         <Stack.Screen
           name="AlertScreen"
           component={AlertScreen}
+        />
+        <Stack.Screen
+          name="BiometricsScreen"
+          component={BiometricsScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
