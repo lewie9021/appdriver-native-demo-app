@@ -1,5 +1,5 @@
-import React, { useLayoutEffect } from "react";
-import { Platform, StatusBar } from "react-native";
+import React, { useLayoutEffect, useEffect } from "react";
+import { Alert, Platform, StatusBar, Linking } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
@@ -20,6 +20,31 @@ import BiometricsScreen from "./screens/BiometricsScreen";
 const Stack = createStackNavigator();
 
 const App = () => {
+  useEffect(() => {
+    Linking.getInitialURL()
+      .then((url) => {
+        if (!url) {
+          return;
+        }
+
+        Alert.alert("Deep Link", url);
+      });
+  }, []);
+
+  useEffect(() => {
+    const handler = (payload) => {
+      if (!payload || !payload.url) {
+        return;
+      }
+
+      Alert.alert("Deep Link", payload.url);
+    };
+
+    Linking.addEventListener("url", handler);
+
+    return () => Linking.removeEventListener("url", handler);
+  }, []);
+
   useLayoutEffect(() => {
     if (Platform.OS === "android") {
       StatusBar.setBackgroundColor("#00CC00");
