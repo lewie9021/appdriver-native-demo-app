@@ -52,7 +52,7 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = NativeDemoApp/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = NativeDemoApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = NativeDemoApp/main.m; sourceTree = "<group>"; };
-		2D02E47B1E0B4A5D006451C7 /* NativeDemoApp-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NativeDemoApp-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E47B1E0B4A5D006451C7 /* NativeDemoApp (tvOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NativeDemoApp (tvOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* NativeDemoApp-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NativeDemoApp-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AF113CF477E3473AACD19C7 /* Pods-NativeDemoApp-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeDemoApp-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-NativeDemoApp-tvOSTests/Pods-NativeDemoApp-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		63564E46F77B51BB058DFFB5 /* libPods-NativeDemoApp-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NativeDemoApp-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,7 +161,6 @@
 				DA24BC44C7B571C818137258 /* Pods-NativeDemoAppTests.debug.xcconfig */,
 				F2883C66273F39F5032BCC2A /* Pods-NativeDemoAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -192,7 +191,7 @@
 			children = (
 				13B07F961A680F5B00A75B9A /* NativeDemoApp.app */,
 				00E356EE1AD99517003FC87E /* NativeDemoAppTests.xctest */,
-				2D02E47B1E0B4A5D006451C7 /* NativeDemoApp-tvOS.app */,
+				2D02E47B1E0B4A5D006451C7 /* NativeDemoApp (tvOS).app */,
 				2D02E4901E0B4A5D006451C7 /* NativeDemoApp-tvOSTests.xctest */,
 			);
 			name = Products;
@@ -257,7 +256,7 @@
 			);
 			name = "NativeDemoApp-tvOS";
 			productName = "NativeDemoApp-tvOS";
-			productReference = 2D02E47B1E0B4A5D006451C7 /* NativeDemoApp-tvOS.app */;
+			productReference = 2D02E47B1E0B4A5D006451C7 /* NativeDemoApp (tvOS).app */;
 			productType = "com.apple.product-type.application";
 		};
 		2D02E48F1E0B4A5D006451C7 /* NativeDemoApp-tvOSTests */ = {
@@ -308,6 +307,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -635,7 +635,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nativedemoapp;
 				PRODUCT_NAME = NativeDemoApp;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -654,7 +654,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nativedemoapp;
 				PRODUCT_NAME = NativeDemoApp;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -680,8 +680,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.NativeDemoApp-tvOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nativedemoapp.tvos;
+				PRODUCT_NAME = "NativeDemoApp (tvOS)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
@@ -708,8 +708,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.NativeDemoApp-tvOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nativedemoapp.tvos;
+				PRODUCT_NAME = "NativeDemoApp (tvOS)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
